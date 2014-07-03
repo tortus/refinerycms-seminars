@@ -20,6 +20,10 @@
     <%= f.check_box :active, :checked => @seminar[:active] -%>
   </div>
 
+  <div class='hemisquare right_side'>
+    <%= render '/seo_meta/form', :form => f %>
+  </div>
+
   <%= render '/refinery/admin/form_actions', :f => f,
              :continue_editing => true,
              :delete_title => t('delete', :scope => 'refinery.seminars.admin.seminars.seminar'),

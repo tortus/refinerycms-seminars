@@ -10,7 +10,7 @@ module Refinery
 
       acts_as_indexed :fields => [:name, :content]
 
-      attr_accessible :name, :content, :active, :position
+      attr_accessible :name, :content, :active, :position, :browser_title, :meta_description
 
       validates :name, :presence => true, :uniqueness => true
     end
