@@ -4,7 +4,7 @@ class CreateSeminarsSeminars < ActiveRecord::Migration
     create_table :refinery_seminars do |t|
       t.string :name
       t.text :content
-      t.boolean :active
+      t.boolean :active, :null => false, :default => true
       t.integer :position
       t.string :slug
 
