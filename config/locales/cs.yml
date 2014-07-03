@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: Přidat Seminar
+            reorder: Řadit Seminars
+            reorder_done: Konec řazení Seminars
+          records:
+            title: Seminars
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Seminars. Zvolte "Přidat Seminar" pro přidání prvního seminar.
+          seminar:
+            view_live_html: Zobrazit náhled seminar<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit seminar
+            delete: Smazat seminar
+      seminars:
+        show:
+          other: Další Seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

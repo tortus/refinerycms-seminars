@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: Add New Seminar
+            reorder: Reorder Seminars
+            reorder_done: Done Reordering Seminars
+          records:
+            title: Seminars
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Seminars yet. Click "Add New Seminar" to add your first seminar.
+          seminar:
+            view_live_html: View this seminar live <br/><em>(opens in a new window)</em>
+            edit: Edit this seminar
+            delete: Remove this seminar forever
+      seminars:
+        show:
+          other: Other Seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

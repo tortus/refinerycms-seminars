@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: 建立新的 Seminar
+            reorder: 对 Seminars 重新排序
+            reorder_done: 对 Seminars 的重新排序结束
+          records:
+            title: Seminars
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Seminars yet. Click "Add New Seminar" to add your first seminar.
+            no_items_yet: 目前没有 Seminars . 点击 "Add New Seminar" 创建一个seminar.
+          seminar:
+            view_live_html: 查看 seminar 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 seminar
+            delete: 永久删除 seminar
+      seminars:
+        show:
+          other: 其他 Seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

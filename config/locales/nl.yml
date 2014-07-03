@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: Nieuwe Seminar toevoegen
+            reorder: De volgorde van de Seminars wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Seminar-volgorde
+          records:
+            title: Seminars
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Seminars. Druk op 'Nieuwe Seminar toevoegen' om de eerste toe te voegen.
+          seminar:
+            view_live_html: Deze seminar op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze seminar
+            delete: Deze seminar definitief verwijderen
+      seminars:
+        show:
+          other: Andere Seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

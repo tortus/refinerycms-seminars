@@ -1,0 +1,7 @@
+Thumbs.db
+.DS_Store
+._*
+
+Gemfile.lock
+.ruby-version
+/spec/dummy

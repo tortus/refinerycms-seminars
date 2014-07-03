@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Seminars::Admin::SeminarsController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.seminars_admin_seminars_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_seminars_admin_seminar_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Seminars::Admin::SeminarsController.sortable? && ::Refinery::Seminars::Seminar.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Seminars"),
+                 refinery.seminars_admin_seminars_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Seminars"),
+                 refinery.seminars_admin_seminars_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: Yeni Ekle Seminar
+            reorder: Tekrar sirala Seminars
+            reorder_done: Tekrar siralama tamamlandiSeminars
+          records:
+            title: Seminars
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Seminars yok henuz.  Tikla "Yeni Ekle Seminar" eklemek senin ilk seminar.
+          seminar:
+            view_live_html: Bunu canlu seminar goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle seminar
+            delete: Bunu Sil seminar sonsuza dek
+      seminars:
+        show:
+          other: Diger Seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

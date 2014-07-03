@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+#        article: masculino/femenino
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: Crear nuevo seminar
+            reorder: Reordenar seminars
+            reorder_done: Reordenación de seminars completada
+          records:
+            title: Seminars
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay seminars todavía. Pulsa en "Crear nuevo Seminar" para crear tu primer seminar.
+          seminar:
+            view_live_html: Ver este seminar como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este seminar
+            delete: Borrar este seminar para siempre
+      seminars:
+        show:
+          other: Otros seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

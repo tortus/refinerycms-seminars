@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Seminar
+            reorder: Réordonner les Seminars
+            reorder_done: Fin de réordonnancement des Seminars
+          records:
+            title: Seminars
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Seminar. Cliquer sur "Créer un(e) nouve(au/l/lle) Seminar" pour créer votre premi(er/ère) seminar.'
+          seminar:
+            view_live_html: Voir ce(t/tte) seminar <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) seminar
+            delete: Supprimer définitivement ce(t/tte) seminar
+      seminars:
+        show:
+          other: Autres Seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

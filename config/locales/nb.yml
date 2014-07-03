@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      seminars:
+        title: Seminars
+    seminars:
+      admin:
+        seminars:
+          actions:
+            create_new: Lag en ny Seminar
+            reorder: Endre rekkefølgen på Seminars
+            reorder_done: Ferdig å endre rekkefølgen Seminars
+          records:
+            title: Seminars
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Seminars enda. Klikk på "Lag en ny Seminar" for å legge til din første seminar.
+          seminar:
+            view_live_html: Vis hvordan denne seminar ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne seminar
+            delete: Fjern denne seminar permanent
+      seminars:
+        show:
+          other: Andre Seminars
+  activerecord:
+    attributes:
+      'refinery/seminars/seminar':
+        name: Name
+        content: Content
+        active: Active

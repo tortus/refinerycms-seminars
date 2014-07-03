@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @seminar.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @seminar.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @seminar.content %>
+    </p>
+  </section>
+  <section>
+    <h1>Active</h1>
+    <p>
+      <%=raw @seminar.active %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="seminars">
+      <% @seminars.each do |seminar| %>
+        <li>
+          <%= link_to seminar.name, refinery.seminars_seminar_path(seminar) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>
