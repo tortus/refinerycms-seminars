@@ -15,13 +15,15 @@
                 :object => "seminars/seminar" -%>
   </div>
 
-  <div class='field'>
-    <%= f.label :active -%>
-    <%= f.check_box :active, :checked => @seminar[:active] -%>
-  </div>
+  <%= render '/seo_meta/form', :form => f %>
 
-  <div class='hemisquare right_side'>
-    <%= render '/seo_meta/form', :form => f %>
+  <div class='field'>
+    <span class='label_with_help'>
+      <%= f.label :active, "Show / hide seminar" %>
+      <%= refinery_help_tag "Allow visitors to view this seminar." %>
+    </span>
+    <%= f.check_box :active, :checked => @seminar[:active] -%>
+    <%= f.label :active, "Active", :class => 'stripped' -%>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
