@@ -1,10 +1,27 @@
 nl:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Nieuwe Seminar Date toevoegen
+            reorder: De volgorde van de Seminar Dates wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Seminar Date-volgorde
+          records:
+            title: Seminar Dates
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Seminar Dates. Druk op 'Nieuwe Seminar
+              Date toevoegen' om de eerste toe te voegen.
+          seminar_date:
+            view_live_html: Deze seminar date op de website bekijken <br/><em>(opent
+              in een nieuw venster)</em>
+            edit: Bewerk deze seminar date
+            delete: Deze seminar date definitief verwijderen
         seminars:
           actions:
             create_new: Nieuwe Seminar toevoegen
@@ -13,17 +30,26 @@ nl:
           records:
             title: Seminars
             sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
-            no_items_yet: Er zijn nog geen Seminars. Druk op 'Nieuwe Seminar toevoegen' om de eerste toe te voegen.
+            no_items_yet: Er zijn nog geen Seminars. Druk op 'Nieuwe Seminar toevoegen'
+              om de eerste toe te voegen.
           seminar:
-            view_live_html: Deze seminar op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            view_live_html: Deze seminar op de website bekijken <br/><em>(opent in
+              een nieuw venster)</em>
             edit: Bewerk deze seminar
             delete: Deze seminar definitief verwijderen
+      dates:
+        show:
+          other: Andere Seminar Dates
       seminars:
         show:
           other: Andere Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

@@ -1,31 +1,52 @@
 zh-CN:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: "建立新的 Seminar Date"
+            reorder: "对 Seminar Dates 重新排序"
+            reorder_done: "对 Seminar Dates 的重新排序结束"
+          records:
+            title: Seminar Dates
+            sorry_no_results: "对不起，未找到结果。"
+            no_items_yet: 目前没有 Seminar Dates . 点击 "Add New Seminar Date" 创建一个seminar
+              date.
+          seminar_date:
+            view_live_html: "查看 seminar date 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 seminar date"
+            delete: "永久删除 seminar date"
         seminars:
           actions:
-            create_new: 建立新的 Seminar
-            reorder: 对 Seminars 重新排序
-            reorder_done: 对 Seminars 的重新排序结束
+            create_new: "建立新的 Seminar"
+            reorder: "对 Seminars 重新排序"
+            reorder_done: "对 Seminars 的重新排序结束"
           records:
             title: Seminars
-            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
-
-            # There are no Seminars yet. Click "Add New Seminar" to add your first seminar.
+            sorry_no_results: "对不起，未找到结果。"
             no_items_yet: 目前没有 Seminars . 点击 "Add New Seminar" 创建一个seminar.
           seminar:
-            view_live_html: 查看 seminar 的最新内容.<br/><em>(新窗口中打开)</em>
-            edit: 编辑 seminar
-            delete: 永久删除 seminar
+            view_live_html: "查看 seminar 的最新内容.<br/><em>(新窗口中打开)</em>"
+            edit: "编辑 seminar"
+            delete: "永久删除 seminar"
+      dates:
+        show:
+          other: "其他 Seminar Dates"
       seminars:
         show:
-          other: 其他 Seminars
+          other: "其他 Seminars"
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

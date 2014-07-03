@@ -12,6 +12,7 @@ Refinery::Core::Engine.routes.draw do
         collection do
           post :update_positions
         end
+        resources :dates
       end
     end
   end

@@ -5,6 +5,20 @@ en:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Add New Seminar Date
+            reorder: Reorder Seminar Dates
+            reorder_done: Done Reordering Seminar Dates
+          records:
+            title: Seminar Dates
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Seminar Dates yet. Click "Add New Seminar Date"
+              to add your first seminar date.
+          seminar_date:
+            view_live_html: View this seminar date live <br/><em>(opens in a new window)</em>
+            edit: Edit this seminar date
+            delete: Remove this seminar date forever
         seminars:
           actions:
             create_new: Add New Seminar
@@ -13,17 +27,25 @@ en:
           records:
             title: Seminars
             sorry_no_results: Sorry! There are no results found.
-            no_items_yet: There are no Seminars yet. Click "Add New Seminar" to add your first seminar.
+            no_items_yet: There are no Seminars yet. Click "Add New Seminar" to add
+              your first seminar.
           seminar:
             view_live_html: View this seminar live <br/><em>(opens in a new window)</em>
             edit: Edit this seminar
             delete: Remove this seminar forever
+      dates:
+        show:
+          other: Other Seminar Dates
       seminars:
         show:
           other: Other Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

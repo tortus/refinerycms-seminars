@@ -1,0 +1,25 @@
+<%= form_for [refinery, :seminars_admin, @seminar_date] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @seminar_date,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :name -%>
+    <%= f.text_field :name, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :seminar -%>
+    <%= f.text_field :seminar -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :full -%>
+    <%= f.check_box :full, :checked => @seminar_date[:full] -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.seminar_dates.admin.seminar_dates.seminar_date'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @seminar_date.name) -%>
+<% end -%>

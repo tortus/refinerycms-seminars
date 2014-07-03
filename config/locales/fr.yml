@@ -1,10 +1,28 @@
 fr:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Seminar Date
+            reorder: Réordonner les Seminar Dates
+            reorder_done: Fin de réordonnancement des Seminar Dates
+          records:
+            title: Seminar Dates
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Seminar Date. Cliquer sur
+              "Créer un(e) nouve(au/l/lle) Seminar Date" pour créer votre premi(er/ère)
+              seminar date.
+          seminar_date:
+            view_live_html: Voir ce(t/tte) seminar date <br/><em>(Ouvre une nouvelle
+              fenêtre)</em>
+            edit: Modifier ce(t/tte) seminar date
+            delete: Supprimer définitivement ce(t/tte) seminar date
         seminars:
           actions:
             create_new: Créer un(e) nouve(au/l/lle) Seminar
@@ -12,18 +30,26 @@ fr:
             reorder_done: Fin de réordonnancement des Seminars
           records:
             title: Seminars
-            sorry_no_results: "Désolé ! Aucun résultat."
-            no_items_yet: 'Il n''y a actuellement aucun(e) Seminar. Cliquer sur "Créer un(e) nouve(au/l/lle) Seminar" pour créer votre premi(er/ère) seminar.'
+            sorry_no_results: Désolé ! Aucun résultat.
+            no_items_yet: Il n'y a actuellement aucun(e) Seminar. Cliquer sur "Créer
+              un(e) nouve(au/l/lle) Seminar" pour créer votre premi(er/ère) seminar.
           seminar:
             view_live_html: Voir ce(t/tte) seminar <br/><em>(Ouvre une nouvelle fenêtre)</em>
             edit: Modifier ce(t/tte) seminar
             delete: Supprimer définitivement ce(t/tte) seminar
+      dates:
+        show:
+          other: Autres Seminar Dates
       seminars:
         show:
           other: Autres Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

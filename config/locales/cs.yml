@@ -1,29 +1,54 @@
 cs:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Přidat Seminar Date
+            reorder: "Řadit Seminar Dates"
+            reorder_done: Konec řazení Seminar Dates
+          records:
+            title: Seminar Dates
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Seminar Dates. Zvolte "Přidat
+              Seminar Date" pro přidání prvního seminar date.
+          seminar_date:
+            view_live_html: Zobrazit náhled seminar date<br/><em>(otevře se v novém
+              okně)</em>
+            edit: Upravit seminar date
+            delete: Smazat seminar date
         seminars:
           actions:
             create_new: Přidat Seminar
-            reorder: Řadit Seminars
+            reorder: "Řadit Seminars"
             reorder_done: Konec řazení Seminars
           records:
             title: Seminars
             sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
-            no_items_yet: Zatím nebyly vytvořeny žádné Seminars. Zvolte "Přidat Seminar" pro přidání prvního seminar.
+            no_items_yet: Zatím nebyly vytvořeny žádné Seminars. Zvolte "Přidat Seminar"
+              pro přidání prvního seminar.
           seminar:
             view_live_html: Zobrazit náhled seminar<br/><em>(otevře se v novém okně)</em>
             edit: Upravit seminar
             delete: Smazat seminar
+      dates:
+        show:
+          other: Další Seminar Dates
       seminars:
         show:
           other: Další Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

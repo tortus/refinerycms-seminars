@@ -1,10 +1,27 @@
 nb:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Lag en ny Seminar Date
+            reorder: Endre rekkefølgen på Seminar Dates
+            reorder_done: Ferdig å endre rekkefølgen Seminar Dates
+          records:
+            title: Seminar Dates
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Seminar Dates enda. Klikk på "Lag en ny Seminar
+              Date" for å legge til din første seminar date.
+          seminar_date:
+            view_live_html: Vis hvordan denne seminar date ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
+            edit: Rediger denne seminar date
+            delete: Fjern denne seminar date permanent
         seminars:
           actions:
             create_new: Lag en ny Seminar
@@ -13,17 +30,26 @@ nb:
           records:
             title: Seminars
             sorry_no_results: Beklager! Vi fant ikke noen resultater.
-            no_items_yet: Det er ingen Seminars enda. Klikk på "Lag en ny Seminar" for å legge til din første seminar.
+            no_items_yet: Det er ingen Seminars enda. Klikk på "Lag en ny Seminar"
+              for å legge til din første seminar.
           seminar:
-            view_live_html: Vis hvordan denne seminar ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            view_live_html: Vis hvordan denne seminar ser ut offentlig <br/><em>(åpner
+              i et nytt vindu)</em>
             edit: Rediger denne seminar
             delete: Fjern denne seminar permanent
+      dates:
+        show:
+          other: Andre Seminar Dates
       seminars:
         show:
           other: Andre Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

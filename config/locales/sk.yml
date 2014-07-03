@@ -1,10 +1,27 @@
 sk:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Pridať Seminar Date
+            reorder: Preusporiadať Seminar Dates
+            reorder_done: Koniec radenia Seminar Dates
+          records:
+            title: Seminar Dates
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Seminar Dates. Kliknite na "Pridať
+              Seminar Date" pre pridanie prvého seminar date.
+          seminar_date:
+            view_live_html: Zobraziť náhľad seminar date<br/><em>(otvorí sa v novom
+              okne)</em>
+            edit: Upraviť seminar date
+            delete: Zmazať seminar date
         seminars:
           actions:
             create_new: Pridať Seminar
@@ -12,18 +29,26 @@ sk:
             reorder_done: Koniec radenia Seminars
           records:
             title: Seminars
-            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
-            no_items_yet: Nie sú vytvorené žiadne Seminars. Kliknite na "Pridať Seminar" pre pridanie prvého seminar.
+            sorry_no_results: "Ľutujeme, ale neboli nájdené žiadne výsledky."
+            no_items_yet: Nie sú vytvorené žiadne Seminars. Kliknite na "Pridať Seminar"
+              pre pridanie prvého seminar.
           seminar:
             view_live_html: Zobraziť náhľad seminar<br/><em>(otvorí sa v novom okne)</em>
             edit: Upraviť seminar
             delete: Zmazať seminar
+      dates:
+        show:
+          other: Daľšie Seminar Dates
       seminars:
         show:
           other: Daľšie Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

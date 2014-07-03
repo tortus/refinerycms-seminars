@@ -1,11 +1,27 @@
 es:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
-#        article: masculino/femenino
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Crear nuevo seminar date
+            reorder: Reordenar seminar dates
+            reorder_done: Reordenación de seminar dates completada
+          records:
+            title: Seminar Dates
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay seminar dates todavía. Pulsa en "Crear nuevo Seminar
+              Date" para crear tu primer seminar date.
+          seminar_date:
+            view_live_html: Ver este seminar date como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
+            edit: Editar este seminar date
+            delete: Borrar este seminar date para siempre
         seminars:
           actions:
             create_new: Crear nuevo seminar
@@ -14,17 +30,26 @@ es:
           records:
             title: Seminars
             sorry_no_results: Lo siento, no hay resultados
-            no_items_yet: No hay seminars todavía. Pulsa en "Crear nuevo Seminar" para crear tu primer seminar.
+            no_items_yet: No hay seminars todavía. Pulsa en "Crear nuevo Seminar"
+              para crear tu primer seminar.
           seminar:
-            view_live_html: Ver este seminar como abierto al público <br/><em>(abre en ventana nueva)</em>
+            view_live_html: Ver este seminar como abierto al público <br/><em>(abre
+              en ventana nueva)</em>
             edit: Editar este seminar
             delete: Borrar este seminar para siempre
+      dates:
+        show:
+          other: Otros seminar dates
       seminars:
         show:
           other: Otros seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

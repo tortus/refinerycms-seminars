@@ -3,6 +3,11 @@ module Refinery
     class Seminar < Refinery::Core::BaseModel
       self.table_name = 'refinery_seminars'
 
+      has_many :dates,  :order => 'refinery_seminars_dates ASC',
+                        :dependent => :delete_all,
+                        :class_name => 'Refinery::Seminars::Date',
+                        :inverse_of => :seminar
+
       extend FriendlyId
       friendly_id :name, :use => :slugged
 

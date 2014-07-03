@@ -1,10 +1,27 @@
 it:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Aggiungi Nuovo Seminar Date
+            reorder: Riordina Seminar Dates
+            reorder_done: Termina il Riordino di Seminar Dates
+          records:
+            title: Seminar Dates
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Seminar Dates. Clicca "Aggiungi Nuovo
+              Seminar Date" per aggiungere il tuo primo seminar date.
+          seminar_date:
+            view_live_html: Guarda live questo seminar date <br/><em>(apre una nuova
+              finestra)</em>
+            edit: Modifica questo seminar date
+            delete: Rimuovi per sempre questo seminar date
         seminars:
           actions:
             create_new: Aggiungi Nuovo Seminar
@@ -12,18 +29,26 @@ it:
             reorder_done: Termina il Riordino di Seminars
           records:
             title: Seminars
-            sorry_no_results: "Spiacenti! Nessun risultato trovato"
-            no_items_yet: Non ci sono ancora Seminars. Clicca "Aggiungi Nuovo Seminar" per aggiungere il tuo primo seminar.
+            sorry_no_results: Spiacenti! Nessun risultato trovato
+            no_items_yet: Non ci sono ancora Seminars. Clicca "Aggiungi Nuovo Seminar"
+              per aggiungere il tuo primo seminar.
           seminar:
             view_live_html: Guarda live questo seminar <br/><em>(apre una nuova finestra)</em>
             edit: Modifica questo seminar
             delete: Rimuovi per sempre questo seminar
+      dates:
+        show:
+          other: Altri Seminar Dates
       seminars:
         show:
           other: Altri Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/seminar_date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

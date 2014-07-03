@@ -1,12 +1,12 @@
 module Refinery
   module Seminars
     module Admin
-      class SeminarsController < ::Refinery::AdminController
+      class DatesController < ::Refinery::AdminController
 
-        crudify :'refinery/seminars/seminar',
+        crudify :'refinery/seminars/date',
                 :title_attribute => 'name',
                 :xhr_paging => true,
-                :order => "position ASC"
+                :order => 'date ASC'
 
       end
     end

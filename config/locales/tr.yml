@@ -1,10 +1,27 @@
 tr:
   refinery:
     plugins:
+      dates:
+        title: Seminar Dates
       seminars:
         title: Seminars
     seminars:
       admin:
+        dates:
+          actions:
+            create_new: Yeni Ekle Seminar Date
+            reorder: Tekrar sirala Seminar Dates
+            reorder_done: Tekrar siralama tamamlandiSeminar Dates
+          records:
+            title: Seminar Dates
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Seminar Dates yok henuz.  Tikla "Yeni Ekle
+              Seminar Date" eklemek senin ilk seminar date.
+          seminar_date:
+            view_live_html: Bunu canlu seminar date goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
+            edit: Bunu Duzenle seminar date
+            delete: Bunu Sil seminar date sonsuza dek
         seminars:
           actions:
             create_new: Yeni Ekle Seminar
@@ -13,17 +30,26 @@ tr:
           records:
             title: Seminars
             sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
-            no_items_yet: Herhangi bir Seminars yok henuz.  Tikla "Yeni Ekle Seminar" eklemek senin ilk seminar.
+            no_items_yet: Herhangi bir Seminars yok henuz.  Tikla "Yeni Ekle Seminar"
+              eklemek senin ilk seminar.
           seminar:
-            view_live_html: Bunu canlu seminar goruntule <br/><em>(yeni bir pencerede acar)</em>
+            view_live_html: Bunu canlu seminar goruntule <br/><em>(yeni bir pencerede
+              acar)</em>
             edit: Bunu Duzenle seminar
             delete: Bunu Sil seminar sonsuza dek
+      dates:
+        show:
+          other: Diger Seminar Dates
       seminars:
         show:
           other: Diger Seminars
   activerecord:
     attributes:
-      'refinery/seminars/seminar':
+      refinery/seminars/date:
+        name: Name
+        seminar: Seminar
+        full: Full
+      refinery/seminars/seminar:
         name: Name
         content: Content
         active: Active

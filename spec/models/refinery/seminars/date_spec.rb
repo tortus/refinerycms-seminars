@@ -2,8 +2,8 @@ require 'spec_helper'
 
 module Refinery
   module Seminars
-    describe Seminar do
-      subject { FactoryGirl.build(:seminar) }
+    describe Date do
+      subject { FactoryGirl.build(:date) }
 
       describe "validations" do
         it { should be_valid }
