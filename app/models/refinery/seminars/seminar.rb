@@ -13,6 +13,18 @@ module Refinery
       attr_accessible :name, :content, :active, :position, :browser_title, :meta_description
 
       validates :name, :presence => true, :uniqueness => true
+
+      def self.active
+        where(:active => true)
+      end
+
+      def self.by_position
+        order("#{self.table_name}.position ASC")
+      end
+
+      def self.by_name
+        order("#{self.table_name}.name ASC")
+      end
     end
   end
 end
