@@ -8,6 +8,8 @@ module Refinery
 
       is_seo_meta if self.table_exists?
 
+      acts_as_indexed :fields => [:name, :content]
+
       attr_accessible :name, :content, :active, :position
 
       validates :name, :presence => true, :uniqueness => true
