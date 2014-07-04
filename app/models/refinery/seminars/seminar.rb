@@ -20,7 +20,8 @@ module Refinery
 
       acts_as_indexed :fields => [:name, :content]
 
-      attr_accessible :name, :content, :active, :position, :browser_title, :meta_description
+      accepts_nested_attributes_for :dates
+      attr_accessible :name, :content, :active, :position, :browser_title, :meta_description, :dates_attributes
 
       validates :name, :presence => true, :uniqueness => true
 
