@@ -3,9 +3,34 @@ FactoryGirl.define do
     sequence(:name) { |n| "seminar #{n}" }
   end
 
-  factory :date, :class => Refinery::Seminars::Date do
+  factory :seminar_date, :class => Refinery::Seminars::Date do
     sequence(:name) { |n| "date #{n}" }
     date { Date.today }
   end
-end
 
+  factory :seminar_signup, :class => Refinery::Seminars::Signup do
+    seminar nil
+    date nil
+    prefix "MyString"
+    first_name "MyString"
+    middle_name "MyString"
+    last_name "MyString"
+    suffix "MyString"
+    address1 "MyString"
+    address2 "MyString"
+    city "MyString"
+    state "MyString"
+    zipcode "MyString"
+    day_phone "MyString"
+    home_phone "MyString"
+    email "test@test.com"
+    member_number "MyString"
+    number_attending 1
+    guest_name "MyString"
+    guest_phone "MyString"
+    guest_email "MyString"
+    reminder "MyString"
+    comments "MyText"
+    spam false
+  end
+end

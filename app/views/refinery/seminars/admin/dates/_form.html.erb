@@ -1,6 +1,6 @@
-<%= form_for [refinery, :seminars_admin, @seminar_date] do |f| -%>
+<%= form_for [refinery, :seminars_admin, @date] do |f| -%>
   <%= render '/refinery/admin/error_messages',
-              :object => @seminar_date,
+              :object => @date,
               :include_object_name => true %>
 
   <div class='field'>
@@ -9,13 +9,13 @@
   </div>
 
   <div class='field'>
-    <%= f.label :seminar -%>
-    <%= f.text_field :seminar -%>
+    <%= f.label :date -%>
+    <%= f.date_select :date -%>
   </div>
 
   <div class='field'>
-    <%= f.label :full -%>
-    <%= f.check_box :full, :checked => @seminar_date[:full] -%>
+    <%= f.check_box :full, :checked => @date[:full] -%>
+    <%= f.label :full, :class => 'stripped' -%>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
