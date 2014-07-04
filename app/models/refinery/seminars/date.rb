@@ -29,6 +29,10 @@ module Refinery
       def title
         name
       end
+
+      def to_label
+        "#{date.to_s(:short)} - #{name}" if persisted?
+      end
     end
   end
 end

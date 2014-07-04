@@ -1,10 +1,12 @@
 FactoryGirl.define do
   factory :seminar, :class => Refinery::Seminars::Seminar do
-    sequence(:name) { |n| "seminar #{n}" }
+    sequence(:name) { |n| "Seminar#{n}" }
+    active true
   end
 
   factory :seminar_date, :class => Refinery::Seminars::Date do
-    sequence(:name) { |n| "date #{n}" }
+    sequence(:name) { |n| "SeminarDate#{n}" }
+    full false
     date { Date.today }
   end
 
