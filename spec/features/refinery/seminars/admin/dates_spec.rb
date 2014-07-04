@@ -10,12 +10,14 @@ describe Refinery do
         describe "dates list" do
           before do
             @seminar = FactoryGirl.create(:seminar)
-            @date = FactoryGirl.create(:seminar_date, :seminar => @seminar)
+            FactoryGirl.create(:seminar_date, :name => "FirstDate", :seminar => @seminar)
+            FactoryGirl.create(:seminar_date, :name => "SecondDate", :seminar => @seminar)
           end
 
           it "shows two items" do
-            visit refinery.seminars_admin_seminar_path(@seminar)
-            page.should have_content(@date.name)
+            visit refinery.edit_seminars_admin_seminar_path(@seminar)
+            page.should have_selector('input[type="text"][value="FirstDate"]')
+            page.should have_selector('input[type="text"][value="SecondDate"]')
           end
         end
 
@@ -81,18 +83,24 @@ describe Refinery do
         #   end
         # end
 
-        # describe "destroy" do
-        #   before { FactoryGirl.create(:date, :name => "UniqueTitleOne") }
+        describe "destroy" do
+          before do
+            @seminar = FactoryGirl.create(:seminar)
+            @date = FactoryGirl.create(:seminar_date, :name => "UniqueTitleOne", :seminar => @seminar)
+          end
 
-        #   it "should succeed" do
-        #     visit refinery.seminars_admin_dates_path
+          it "should succeed" do
+            visit refinery.edit_seminars_admin_seminar_path(@seminar)
 
-        #     click_link "Remove this seminar date forever"
+            within ".dates_fields" do
+              click_link "Remove"
+            end
 
-        #     page.should have_content("'UniqueTitleOne' was successfully removed.")
-        #     Refinery::Seminars::Date.count.should == 0
-        #   end
-        # end
+            current_path.should == refinery.edit_seminars_admin_seminar_path(@seminar)
+            page.should have_content("'UniqueTitleOne' was successfully deleted.")
+            Refinery::Seminars::Date.count.should == 0
+          end
+        end
 
       end
     end

@@ -25,7 +25,7 @@ module Refinery
 
         def destroy
           @date.destroy
-          redirect_to refinery.seminars_admin_edit_seminar_url(@seminar), :notice => "Date was successfully deleted."
+          redirect_to refinery.edit_seminars_admin_seminar_url(@seminar), :notice => "'#{@date.name}' was successfully deleted."
         end
 
         private

@@ -16,13 +16,13 @@ module Refinery
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @seminar in the line below:
-        present(@page)
+        present(@seminar)
       end
 
     protected
 
       def find_all_seminars
-        @seminars = Seminar.order('position ASC')
+        @seminars = Seminar.active.by_position
       end
 
       def find_page

@@ -2,7 +2,9 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
   namespace :seminars do
-    resources :seminars, :path => '', :only => [:index, :show]
+    resources :seminars, :path => '', :only => [:index, :show] do
+      resources :signups, :only => [:create]
+    end
   end
 
   # Admin routes
@@ -12,7 +14,8 @@ Refinery::Core::Engine.routes.draw do
         collection do
           post :update_positions
         end
-        resources :dates, :only => [:new, :edit, :update, :destroy]
+        # resources :signups, :only => [:index, :show]
+        resources :dates, :only => [:destroy]
       end
     end
   end

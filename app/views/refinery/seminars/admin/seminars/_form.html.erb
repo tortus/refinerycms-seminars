@@ -8,6 +8,22 @@
     <%= f.text_field :name, :class => 'larger widest' -%>
   </div>
 
+  <div class='field dates_fields'>
+    <%= f.label :dates %>
+    <%= f.fields_for :dates do |date_fields| %>
+      <div class='date_field' id='<%= dom_id(date_fields.object) %>'>
+        <%= date_fields.date_select :date %>
+        <%= date_fields.text_field :name, :placeholder => "Enter times and additional info", :size => 70 %>
+        <%= date_fields.check_box :full %>
+        <%= date_fields.label :full, :class => 'stripped' %>
+        <% if date_fields.object.persisted? && !date_fields.object.signups.any? %>
+          <%= link_to "Remove", refinery.seminars_admin_seminar_date_path(@seminar, date_fields.object),
+            {:method => :delete, :class => 'button confirm-delete', :data => {:confirm => "Are you sure you want to remove this date?"}} %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
   <div class='field'>
     <%= render '/refinery/admin/wysiwyg',
                 :f => f,
