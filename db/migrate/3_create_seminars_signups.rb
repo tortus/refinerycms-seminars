@@ -23,6 +23,8 @@ class CreateSeminarsSignups < ActiveRecord::Migration
       t.string :guest_email
       t.string :reminder
       t.text :comments
+
+      t.string :number
       t.boolean :spam, :default => false, :null => false
       t.timestamps
     end
