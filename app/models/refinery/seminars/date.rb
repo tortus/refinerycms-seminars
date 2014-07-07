@@ -31,7 +31,7 @@ module Refinery
       end
 
       def to_label
-        "#{date.to_s(:short)} - #{name}" if persisted?
+        "#{date.strftime("%A, %-m/%-d/%y")} - #{name}" if persisted?
       end
     end
   end
