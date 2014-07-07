@@ -50,11 +50,15 @@ describe Refinery do
         end
       end
 
-      # context "with invalid data" do
-      #   it "shows an error message" do
-      #     pending
-      #   end
-      # end
+      context "with invalid data" do
+        it "shows an error message" do
+          fill_in "Last name", :with => ""
+          click_button "Submit"
+          Refinery::Seminars::Signup.count.should == 0
+          current_path.should eq(refinery.seminars_seminar_signups_path(@seminar))
+          page.should have_content("Last name can't be blank")
+        end
+      end
     end
 
   end
