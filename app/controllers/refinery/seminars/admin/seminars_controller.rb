@@ -11,11 +11,19 @@ module Refinery
 
         def new
           @seminar = Seminar.new
-          @seminar.dates.build unless @seminar.dates.last.try(:new_record?)
+          unless @seminar.dates.last.try(:new_record?)
+            3.times do
+              @seminar.dates.build
+            end
+          end
         end
 
         def edit
-          @seminar.dates.build unless @seminar.dates.last.try(:new_record?)
+          unless @seminar.dates.last.try(:new_record?)
+            3.times do
+              @seminar.dates.build
+            end
+          end
         end
 
       end
