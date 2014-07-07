@@ -22,8 +22,16 @@ module Refinery
         where(:full => false)
       end
 
+      def self.current
+        where("#{self.table_name}.date >= ?", ::Date.today)
+      end
+
+      def current?
+        date && date >= ::Date.today
+      end
+
       def self.active
-        not_full
+        not_full.current
       end
 
       def title

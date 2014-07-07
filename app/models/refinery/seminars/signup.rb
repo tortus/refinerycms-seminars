@@ -25,6 +25,7 @@ module Refinery
 
       validate :seminar_must_be_active
       validate :date_must_not_be_full
+      validate :date_must_be_current
 
       def options_for_date
         seminar.dates.active.map {|date|
@@ -65,6 +66,13 @@ module Refinery
             errors.add(:date_id, "must not be full")
           end
         end
+
+        def date_must_be_current
+          unless date.present? && date.current?
+            errors.add(:date_id, "must be current")
+          end
+        end
+
     end
   end
 end
