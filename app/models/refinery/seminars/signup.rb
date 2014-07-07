@@ -21,8 +21,16 @@ module Refinery
 
       validates_format_of :email, :with => /[^@]+@[^@]+/
 
+      validates_inclusion_of :reminder, :in => lambda {|signup| signup.options_for_reminder}
+
       validate :seminar_must_be_active
       validate :date_must_not_be_full
+
+      def options_for_date
+        seminar.dates.active.map {|date|
+          [date.to_label, date.id]
+        }
+      end
 
       def options_for_prefix
         %w[Mr. Mrs. Ms. Miss. Dr.]
@@ -38,6 +46,10 @@ module Refinery
 
       def options_for_number_attending
         (1..10).to_a
+      end
+
+      def options_for_reminder
+        ["Email", "Phone call", "Both"]
       end
 
       private
