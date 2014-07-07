@@ -3,7 +3,11 @@ Refinery::Core::Engine.routes.draw do
   # Frontend routes
   namespace :seminars do
     resources :seminars, :path => '', :only => [:index, :show] do
-      resources :signups, :only => [:new, :create]
+      resources :signups, :only => [:new, :create] do
+        collection do
+          get :thank_you
+        end
+      end
     end
   end
 

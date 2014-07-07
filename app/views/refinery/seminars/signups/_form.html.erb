@@ -1,0 +1,95 @@
+<p>*= Required</p>
+
+<%= form_for [refinery, :seminars, @seminar, @signup] do |f| %>
+  <%= render  "/refinery/admin/error_messages",
+              :object => f.object,
+              :include_object_name => true %>
+  <div class='field'>
+    <%= f.label :date_id %>
+    <%= f.select :date_id, @signup.options_for_date %>
+  </div>
+  <div class='field'>
+    <%= f.label :prefix %>
+    <%= f.select :prefix, @signup.options_for_prefix, :include_blank => true %>
+  </div>
+  <div class='field required'>
+    <%= f.label :first_name, "*First name" %>
+    <%= f.text_field :first_name, :required => 'required' %>
+  </div>
+  <div class='field'>
+    <%= f.label :middle_name %>
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class='field required'>
+    <%= f.label :last_name, "*Last name" %>
+    <%= f.text_field :last_name, :required => 'required' %>
+  </div>
+  <div class='field'>
+    <%= f.label :suffix %>
+    <%= f.select :suffix, @signup.options_for_suffix, :include_blank => true %>
+  </div>
+  <div class='field'>
+    <%= f.label :address1, "*Address" %>
+    <%= f.text_field :address1 %>
+    <%= f.text_field :address2 %>
+  </div>
+  <div class='field required'>
+    <%= f.label :city, "*City" %>
+    <%= f.text_field :city, :required => 'required' %>
+  </div>
+  <div class='field required'>
+    <%= f.label :state, "*State" %>
+    <%= f.select :state, @signup.options_for_state, :include_blank => true %>
+  </div>
+  <div class='field required'>
+    <%= f.label :zipcode, "*Zip" %>
+    <%= f.text_field :zipcode, :required => 'required' %>
+  </div>
+  <div class='field required'>
+    <%= f.label :day_phone, "*Daytime phone" %>
+    <%= f.text_field :day_phone, :required => 'required' %>
+  </div>
+  <div class='field required'>
+    <%= f.label :home_phone, "*Home phone" %>
+    <%= f.text_field :home_phone, :required => 'required' %>
+  </div>
+  <div class='field required'>
+    <%= f.label :email, "*Email" %>
+    <%= f.text_field :email, :type => 'email', :required => 'required' %>
+  </div>
+  <div class='field'>
+    <%= f.label :member_number %>
+    <%= f.text_field :member_number %>
+  </div>
+  <div class='field'>
+    <%= f.label :number_attending %>
+    <%= f.select :number_attending, @signup.options_for_number_attending, :include_blank => true %>
+  </div>
+  <div class='field'>
+    <%= f.label :guest_name %>
+    <%= f.text_field :guest_name %>
+  </div>
+  <div class='field'>
+    <%= f.label :guest_phone %>
+    <%= f.text_field :guest_phone %>
+  </div>
+  <div class='field'>
+    <%= f.label :guest_email %>
+    <%= f.text_field :guest_email, :type => 'email' %>
+  </div>
+  <div class='field required'>
+    <%= f.label :reminder, "*How would you like to be reminded about this workshop?" %>
+    <%= f.select :reminder, @signup.options_for_reminder, :include_blank => "Please select" %>
+  </div>
+  <div class='field'>
+    <%= f.label :comments %>
+    <%= f.text_area :comments, :rows => 4 %>
+  </div>
+  <div class='field'>
+    <%= f.submit "Submit", :class => 'button' %>
+  </div>
+<% end %>
+
+<p>For questions or assistance, <a href="/home/contact">contact a friendly UMassFive representative today!</a></p>
+
+<p><small>Investment products and services offered through CUSO Financial Services, L.P. (CFS), an independent broker/dealer, are not NCUA/NCUSIF insured, not Credit Union guaranteed, and may lose value. Advisors are employed by UMassFive College Federal Credit Union and registered through CFS. (Member FINRA/SIPC).</small></p>
