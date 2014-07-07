@@ -1,0 +1,7 @@
+<ul class="seminar_dates">
+  <% dates.each do |date| %>
+    <li class="seminar_date" id="<%= dom_id(date) %>">
+      <%= date.to_label %> - <%= link_to(t('.register_now'), '#') %>
+    </li>
+  <% end %>
+</ul>

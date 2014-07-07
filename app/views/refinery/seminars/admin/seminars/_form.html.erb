@@ -13,7 +13,7 @@
     <%= f.fields_for :dates do |date_fields| %>
       <div class='date_field' id='<%= dom_id(date_fields.object) %>'>
         <%= date_fields.date_select :date %>
-        <%= date_fields.text_field :name, :placeholder => "Enter times and additional info", :size => 70 %>
+        <%= date_fields.text_field :name, :placeholder => "Enter times and location", :size => 70 %>
         <%= date_fields.check_box :full %>
         <%= date_fields.label :full, :class => 'stripped' %>
         <% if date_fields.object.persisted? && !date_fields.object.signups.any? %>

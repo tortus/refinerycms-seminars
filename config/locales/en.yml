@@ -33,12 +33,16 @@ en:
             view_live_html: View this seminar live <br/><em>(opens in a new window)</em>
             edit: Edit this seminar
             delete: Remove this seminar forever
-      dates:
-        show:
-          other: Other Seminar Dates
       seminars:
+        index:
         show:
-          other: Other Seminars
+          dates: Dates
+        seminar:
+          dates: Dates
+        body_content_right:
+          seminars: Seminars
+        dates:
+          register_now: Register now
   activerecord:
     attributes:
       refinery/seminars/date:

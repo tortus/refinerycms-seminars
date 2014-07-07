@@ -1,0 +1,8 @@
+<h3><%= link_to t('.seminars'), refinery.seminars_seminars_path %></h3>
+<ul class="side-nav">
+  <% @seminars.each do |seminar| %>
+    <li class="<%= 'active' if seminar == @seminar %>">
+      <%= link_to seminar.name, refinery.seminars_seminar_path(seminar) %>
+    </li>
+  <% end %>
+</ul>

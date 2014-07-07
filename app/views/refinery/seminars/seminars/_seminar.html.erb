@@ -1,0 +1,6 @@
+<div class="seminar" id="<%= dom_id(seminar) %>">
+  <h2><%= link_to(seminar.name, refinery.seminars_seminar_path(seminar)) %></h2>
+  <%=raw seminar.content %>
+  <h3><%= t('.dates') %></h3>
+  <%= render 'dates', :dates => seminar.dates.active %>
+</div>

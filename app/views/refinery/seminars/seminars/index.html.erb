@@ -1,11 +1,11 @@
 <% content_for :body do %>
-  <ul id="seminars">
-    <% @seminars.each do |seminar| %>
-      <li>
-        <%= link_to seminar.name, refinery.seminars_seminar_path(seminar) %>
-      </li>
-    <% end %>
-  </ul>
+  <section class="seminars">
+    <%= render :partial => 'seminar', :collection => @seminars %>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <%= render 'body_content_right' %>
 <% end %>
 
 <%= render '/refinery/content_page' %>
