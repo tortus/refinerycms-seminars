@@ -43,6 +43,10 @@ en:
           seminars: Seminars
         dates:
           register_now: Register now
+      signups:
+        new:
+          sign_up: Sign Up
+          workshop_and_seminar_sign_up: Workshop and Seminar Sign Up
   activerecord:
     attributes:
       refinery/seminars/date:
@@ -53,3 +57,12 @@ en:
         name: Name
         content: Content
         active: Active
+      refinery/seminars/signup:
+        date_id: Seminar
+        first_name: First name
+        middle_name: Middle name
+        last_name: Last name
+        guest_name: Guest name (if applicable)
+        guest_phone: Guest phone (if different from primary contact)
+        guest_email: Guest email (if different from primary contact)
+        comments: Additional comments

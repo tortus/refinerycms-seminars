@@ -14,9 +14,9 @@ FactoryGirl.define do
     seminar { FactoryGirl.build(:seminar) }
     date { FactoryGirl.build(:seminar_date, :seminar => seminar) }
     prefix "MyString"
-    first_name "MyString"
-    middle_name "MyString"
-    last_name "MyString"
+    first_name "Firstname"
+    middle_name "Middlename"
+    last_name "Lastname"
     suffix "MyString"
     address1 "MyString"
     address2 "MyString"
@@ -31,7 +31,7 @@ FactoryGirl.define do
     guest_name "MyString"
     guest_phone "MyString"
     guest_email "MyString"
-    reminder "MyString"
+    reminder "Email"
     comments "MyText"
     spam false
   end

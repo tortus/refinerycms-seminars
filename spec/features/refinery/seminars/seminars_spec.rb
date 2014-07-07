@@ -25,5 +25,30 @@ describe Refinery do
       end
     end
 
+    describe "signing up for a seminar" do
+      before do
+        @seminar = FactoryGirl.create(:seminar)
+        @date = FactoryGirl.create(:seminar_date, :seminar => @seminar)
+        visit refinery.seminars_seminars_path
+        click_link "Register now"
+      end
+
+      context "with valid data" do
+        it "succeeds" do
+          fill_in "First name", :with => "Test"
+          fill_in "Last name", :with => "Testerson"
+          fill_in "Address", :with => "123 Test St."
+          fill_in "City", :with => "Amherst"
+          fill_in "State", :with => "Massachusetts"
+        end
+      end
+
+      # context "with invalid data" do
+      #   it "shows an error message" do
+      #     pending
+      #   end
+      # end
+    end
+
   end
 end
