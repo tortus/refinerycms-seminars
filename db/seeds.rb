@@ -21,5 +21,14 @@ Refinery::I18n.frontend_locales.each do |lang|
     Refinery::Pages.default_parts.each_with_index do |default_page_part, index|
       page.parts.create(:title => default_page_part, :body => nil, :position => index)
     end
+
+    thank_you = Refinery::Page.create(
+      :title => 'Thank You',
+      :deletable => false,
+      :parent => page
+    )
+    Refinery::Pages.default_parts.each_with_index do |default_page_part, index|
+      thank_you.parts.create(:title => default_page_part, :body => nil, :position => index)
+    end
   end
 end
