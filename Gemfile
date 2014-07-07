@@ -22,6 +22,7 @@ end
 group :development, :test do
   gem 'refinerycms-testing', '~> 2.1.0'
   gem 'rspec-its'
+  gem 'launchy'
 
   platforms :ruby do
     require 'rbconfig'
