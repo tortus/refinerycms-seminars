@@ -4,7 +4,7 @@ module Refinery
       before_filter :find_seminar, :find_page, :find_all_seminars
 
       def new
-        @signup = Signup.new(params[:signup])
+        @signup = Signup.new(:date_id => params[:date_id].to_s)
         @signup.seminar = @seminar
         present(@page)
       end

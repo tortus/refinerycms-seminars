@@ -3,7 +3,7 @@
     <li class="seminar_date" id="<%= dom_id(date) %>">
       <%= date.to_label %>
       -
-      <%= link_to t('.register_now'), refinery.new_seminars_seminar_signup_path(date.seminar, :seminar => {:date_id => date.id}) %>
+      <%= link_to t('.register_now'), refinery.new_seminars_seminar_signup_path(date.seminar, :date_id => date.id) %>
     </li>
   <% end %>
 </ul>
