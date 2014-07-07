@@ -1,4 +1,4 @@
-<p>*= Required</p>
+<p>*= <%= t('.required') %></p>
 
 <%= form_for [refinery, :seminars, @seminar, @signup] do |f| %>
   <%= render  "/refinery/admin/error_messages",
@@ -89,7 +89,3 @@
     <%= f.submit "Submit", :class => 'button' %>
   </div>
 <% end %>
-
-<p>For questions or assistance, <a href="/home/contact">contact a friendly UMassFive representative today!</a></p>
-
-<p><small>Investment products and services offered through CUSO Financial Services, L.P. (CFS), an independent broker/dealer, are not NCUA/NCUSIF insured, not Credit Union guaranteed, and may lose value. Advisors are employed by UMassFive College Federal Credit Union and registered through CFS. (Member FINRA/SIPC).</small></p>

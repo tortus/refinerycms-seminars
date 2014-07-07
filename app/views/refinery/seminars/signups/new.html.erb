@@ -1,8 +1,3 @@
-<% content_for :title, t('.workshop_and_seminar_sign_up') -%>
-<% content_for :body_content_title do -%>
-  <%= t('.workshop_and_seminar_sign_up') %>
-<% end -%>
-
 <% content_for :body do -%>
   <%= render 'form' %>
 <% end -%>
@@ -11,4 +6,4 @@
   <%= render '/refinery/seminars/seminars/body_content_right' %>
 <% end %>
 
-<%= render '/refinery/content_page', :remove_automatic_sections => true %>
+<%= render '/refinery/content_page' %>

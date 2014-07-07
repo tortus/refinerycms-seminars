@@ -1,9 +1,10 @@
 module Refinery
   module Seminars
     class SignupsController < ::ApplicationController
-      before_filter :find_seminar, :find_page, :find_all_seminars
+      before_filter :find_seminar, :find_all_seminars
 
       def new
+        @page = ::Refinery::Page.find_by_path("/seminars/sign-up")
         @signup = Signup.new(:date_id => params[:date_id].to_s)
         @signup.seminar = @seminar
         present(@page)
@@ -28,10 +29,6 @@ module Refinery
 
         def find_seminar
           @seminar = Seminar.active.find(params[:seminar_id])
-        end
-
-        def find_page
-          @page = ::Refinery::Page.where(:link_url => "/seminars").first
         end
 
         def find_all_seminars

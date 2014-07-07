@@ -44,9 +44,23 @@ en:
         dates:
           register_now: Register now
       signups:
+        form:
+          required: Required
         new:
           sign_up: Sign Up
           workshop_and_seminar_sign_up: Workshop and Seminar Sign Up
+      signup_mailer:
+        notification:
+          greeting: Hi there
+          you_recieved_new_signup: You just received a new seminar signup.
+          signup_starts: --- signup starts ---
+          signup_ends: --- signup ends ---
+          from: From
+          email: Email
+          phone: Phone
+          message: Message
+          closing_line: Kind Regards
+          ps: P.S. All your inquiries are stored in the "Inquiries" section of Refinery should you ever want to view it later there.
   activerecord:
     attributes:
       refinery/seminars/date:
