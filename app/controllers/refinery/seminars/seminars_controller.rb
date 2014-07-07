@@ -22,7 +22,7 @@ module Refinery
     protected
 
       def find_all_seminars
-        @seminars = Seminar.active.by_position
+        @seminars = Seminar.active.by_position.includes(:dates)
       end
 
       def find_page
