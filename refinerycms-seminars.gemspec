@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.add_dependency    'refinerycms-core',     '~> 2.1.2'
   s.add_dependency    'refinerycms-settings', '~> 2.1.0'
   s.add_dependency    'acts_as_indexed',      '~> 0.8.0'
-  s.add_dependency    'filters_spam',         '~> 0.2'
+  # s.add_dependency    'filters_spam',         '~> 0.2'
   s.add_dependency    'seo_meta',             '~> 1.4.0'
   s.add_dependency    'friendly_id',          '~> 4.0.4'
 
