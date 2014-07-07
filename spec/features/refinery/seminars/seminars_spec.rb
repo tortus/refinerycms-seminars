@@ -37,14 +37,8 @@ describe Refinery do
         it "succeeds" do
           fill_in "First name", :with => "Test"
           fill_in "Last name", :with => "Testerson"
-          fill_in "Address", :with => "123 Test St."
-          fill_in "City", :with => "Amherst"
-          select "Massachusetts", :from => "State"
-          fill_in "Zip", :with => "12345"
-          fill_in "Daytime phone", :with => "123-345-7890"
-          fill_in "Home phone", :with => "123-345-7890"
+          fill_in "Phone", :with => "123-345-7890"
           fill_in "Email", :with => "test@test.com"
-          select "Email", :from => "signup[reminder]"
           click_button "Submit"
           current_path.should eq(refinery.thank_you_seminars_seminar_signups_path(@seminar))
         end

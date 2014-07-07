@@ -13,15 +13,14 @@ module Refinery
         :maximum => 255
       validates_length_of :comments, :maximum => 2000
 
-      validates_presence_of :first_name, :last_name, :address1, :city, :state, :zipcode,
-        :day_phone, :home_phone, :email, :reminder
+      validates_presence_of :first_name, :last_name, :day_phone, :email
 
       validates_numericality_of :number_attending, :only_integer => true, :allow_blank => true,
         :greater_than_or_equal_to => 1, :less_than_or_equal_to => 10
 
       validates_format_of :email, :with => /[^@]+@[^@]+/
 
-      validates_inclusion_of :reminder, :in => lambda {|signup| signup.options_for_reminder}
+      # validates_inclusion_of :reminder, :in => lambda {|signup| signup.options_for_reminder}
 
       validate :seminar_must_be_active
       validate :date_must_not_be_full

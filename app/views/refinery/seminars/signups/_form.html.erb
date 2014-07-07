@@ -8,23 +8,23 @@
     <%= f.label :date_id %>
     <%= f.select :date_id, @signup.options_for_date %>
   </div>
-  <div class='field'>
+<!--   <div class='field'>
     <%= f.label :prefix %>
     <%= f.select :prefix, @signup.options_for_prefix, :include_blank => true %>
-  </div>
+  </div> -->
   <div class='field required'>
     <%= f.label :first_name, "*First name" %>
     <%= f.text_field :first_name, :required => 'required' %>
   </div>
-  <div class='field'>
+<!--   <div class='field'>
     <%= f.label :middle_name %>
     <%= f.text_field :middle_name %>
-  </div>
+  </div> -->
   <div class='field required'>
     <%= f.label :last_name, "*Last name" %>
     <%= f.text_field :last_name, :required => 'required' %>
   </div>
-  <div class='field'>
+<!--   <div class='field'>
     <%= f.label :suffix %>
     <%= f.select :suffix, @signup.options_for_suffix, :include_blank => true %>
   </div>
@@ -44,15 +44,15 @@
   <div class='field required'>
     <%= f.label :zipcode, "*Zip" %>
     <%= f.text_field :zipcode, :required => 'required' %>
-  </div>
+  </div> -->
   <div class='field required'>
-    <%= f.label :day_phone, "*Daytime phone" %>
+    <%= f.label :day_phone, "*Phone" %>
     <%= f.text_field :day_phone, :required => 'required' %>
   </div>
-  <div class='field required'>
+<!--   <div class='field required'>
     <%= f.label :home_phone, "*Home phone" %>
     <%= f.text_field :home_phone, :required => 'required' %>
-  </div>
+  </div> -->
   <div class='field required'>
     <%= f.label :email, "*Email" %>
     <%= f.text_field :email, :type => 'email', :required => 'required' %>
@@ -63,28 +63,28 @@
   </div>
   <div class='field'>
     <%= f.label :number_attending %>
-    <%= f.select :number_attending, @signup.options_for_number_attending, :include_blank => true %>
+    <%= f.select :number_attending, @signup.options_for_number_attending %>
   </div>
   <div class='field'>
     <%= f.label :guest_name %>
     <%= f.text_field :guest_name %>
   </div>
-  <div class='field'>
+<!--   <div class='field'>
     <%= f.label :guest_phone %>
     <%= f.text_field :guest_phone %>
-  </div>
+  </div> -->
   <div class='field'>
     <%= f.label :guest_email %>
     <%= f.text_field :guest_email, :type => 'email' %>
   </div>
-  <div class='field required'>
+<!--   <div class='field required'>
     <%= f.label :reminder, "*How would you like to be reminded about this workshop?" %>
     <%= f.select :reminder, @signup.options_for_reminder, :include_blank => "Please select" %>
   </div>
   <div class='field'>
     <%= f.label :comments %>
     <%= f.text_area :comments, :rows => 4 %>
-  </div>
+  </div> -->
   <div class='field'>
     <%= f.submit "Submit", :class => 'button' %>
   </div>
