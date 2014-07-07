@@ -12,7 +12,7 @@ Refinery::I18n.frontend_locales.each do |lang|
 
   url = "/seminars"
   if defined?(Refinery::Page) && Refinery::Page.where(:link_url => url).empty?
-    page = Refinery::Page.create(
+    page = Refinery::Page.create!(
       :title => 'Seminars',
       :link_url => url,
       :deletable => false,
@@ -22,10 +22,9 @@ Refinery::I18n.frontend_locales.each do |lang|
       page.parts.create(:title => default_page_part, :body => nil, :position => index)
     end
 
-    thank_you = Refinery::Page.create(
+    thank_you = page.children.create!(
       :title => 'Thank You',
-      :deletable => false,
-      :parent => page
+      :deletable => false
     )
     Refinery::Pages.default_parts.each_with_index do |default_page_part, index|
       thank_you.parts.create(:title => default_page_part, :body => nil, :position => index)
