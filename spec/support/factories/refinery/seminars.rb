@@ -11,8 +11,8 @@ FactoryGirl.define do
   end
 
   factory :seminar_signup, :class => Refinery::Seminars::Signup do
-    seminar nil
-    date nil
+    seminar { FactoryGirl.build(:seminar) }
+    date { FactoryGirl.build(:seminar_date, :seminar => seminar) }
     prefix "MyString"
     first_name "MyString"
     middle_name "MyString"

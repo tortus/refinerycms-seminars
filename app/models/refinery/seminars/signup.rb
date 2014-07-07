@@ -16,9 +16,43 @@ module Refinery
       validates_presence_of :first_name, :last_name, :address1, :city, :state, :zipcode,
         :day_phone, :home_phone, :email, :reminder
 
-      validates_numericality_of :number_attending, :only_integer => true, :allow_blank => true, :greater_than_or_equal_to => 0
+      validates_numericality_of :number_attending, :only_integer => true, :allow_blank => true,
+        :greater_than_or_equal_to => 1, :less_than_or_equal_to => 10
 
       validates_format_of :email, :with => /[^@]+@[^@]+/
+
+      validate :seminar_must_be_active
+      validate :date_must_not_be_full
+
+      def options_for_prefix
+        %w[Mr. Mrs. Ms. Miss. Dr.]
+      end
+
+      def options_for_suffix
+        %w[Sr. Jr. Esq.]
+      end
+
+      def options_for_state
+        State.options
+      end
+
+      def options_for_number_attending
+        (1..10).to_a
+      end
+
+      private
+
+        def seminar_must_be_active
+          unless seminar.present? && seminar.active?
+            errors.add(:seminar_id, "must be active")
+          end
+        end
+
+        def date_must_not_be_full
+          unless date.present? && !date.full?
+            errors.add(:date_id, "must not be full")
+          end
+        end
     end
   end
 end
