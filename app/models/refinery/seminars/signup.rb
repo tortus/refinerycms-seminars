@@ -29,11 +29,11 @@ module Refinery
       validate :date_must_be_current
 
       def save_and_deliver_emails(request)
-        transaction do
-          save!
+        if result = self.save
           SignupMailer.confirmation(self, request).deliver
           SignupMailer.notification(self, request).deliver
         end
+        result
       end
 
       def options_for_date
