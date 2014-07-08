@@ -13,7 +13,7 @@ module Refinery
       def create
         @signup = Signup.new(params[:signup])
         @signup.seminar = @seminar
-        if @signup.save
+        if @signup.save_and_deliver_emails(request)
           redirect_to refinery.thank_you_seminars_seminar_signups_url(@seminar)
         else
           render :action => :new

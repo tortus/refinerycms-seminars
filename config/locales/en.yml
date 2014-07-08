@@ -56,11 +56,15 @@ en:
           signup_starts: --- signup starts ---
           signup_ends: --- signup ends ---
           from: From
+          seminar: Seminar
+          date: Date
           email: Email
           phone: Phone
-          message: Message
+          member_number: Member number
+          number_attending: Number attending
+          guest_name: Guest name
+          guest_email: Guest email
           closing_line: Kind Regards
-          ps: P.S. All your inquiries are stored in the "Inquiries" section of Refinery should you ever want to view it later there.
   activerecord:
     attributes:
       refinery/seminars/date:

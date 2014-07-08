@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <p>
+      <%=raw t('.greeting') %>,<br>
+      <%=raw t('.you_recieved_new_signup') %>
+    </p>
+
+    <p><%=raw t('.signup_starts') %></p>
+
+    <p>
+      <%=raw t('.from') %>: <%= @signup.name %><br>
+      <%=raw t('.seminar') %>: <%= @signup.seminar_name %><br>
+      <%=raw t('.date') %>: <%= @signup.date.to_label %><br>
+      <%=raw t('.email') %>: <%= @signup.email %><br>
+      <%=raw t('.phone') %>: <%= @signup.day_phone %><br>
+      <%=raw t('.member_number') %>: <%= @signup.member_number %><br>
+      <%=raw t('.number_attending') %>: <%= @signup.number_attending %><br>
+      <%=raw t('.guest_name') %>: <%= @signup.guest_name %><br>
+      <%=raw t('.guest_email') %>: <%= @signup.guest_email %>
+    </p>
+
+    <p><%=raw t('.signup_ends') %></p>
+
+    <p><%=raw t('.closing_line') %>,<br>
+        <%=raw Refinery::Core.site_name %></p>
+  </body>
+</html>
+
+

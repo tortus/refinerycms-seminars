@@ -5,6 +5,8 @@ module Refinery
       belongs_to :seminar, :class_name => 'Refinery::Seminars::Seminar', :inverse_of => :signups
       belongs_to :date, :class_name => 'Refinery::Seminars::Date', :inverse_of => :signups
 
+      delegate :name, :to => :seminar, :prefix => true, :allow_nil => true
+
       attr_accessible :address1, :address2, :city, :comments, :date_id, :day_phone, :email, :first_name, :guest_email, :guest_name, :guest_phone, :home_phone, :last_name, :member_number, :middle_name, :number_attending, :prefix, :reminder, :seminar_id, :state, :suffix, :zipcode
 
       validates_length_of :address1, :address2, :city, :comments, :date_id, :day_phone,
@@ -25,6 +27,14 @@ module Refinery
       validate :seminar_must_be_active
       validate :date_must_not_be_full
       validate :date_must_be_current
+
+      def save_and_deliver_emails(request)
+        transaction do
+          save!
+          SignupMailer.confirmation(self, request).deliver
+          SignupMailer.notification(self, request).deliver
+        end
+      end
 
       def options_for_date
         seminar.dates.active.map {|date|
@@ -50,6 +60,10 @@ module Refinery
 
       def options_for_reminder
         ["Email", "Phone call", "Both"]
+      end
+
+      def name
+        [first_name, middle_name, last_name].reject(&:blank?).map(&:strip).join(" ")
       end
 
       private
