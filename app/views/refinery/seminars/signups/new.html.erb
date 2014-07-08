@@ -1,5 +1,10 @@
 <% content_for :body do -%>
-  <%= render 'form' %>
+  <section>
+    <%= raw @page.content_for(:body) %>
+  </section>
+  <section>
+    <%= render 'form' %>
+  </section>
 <% end -%>
 
 <% content_for :side_body do %>

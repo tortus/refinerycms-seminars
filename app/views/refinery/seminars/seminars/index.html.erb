@@ -1,4 +1,7 @@
 <% content_for :body do %>
+  <section>
+    <%= raw @page.content_for(:body) %>
+  </section>
   <section class="seminars">
     <%= render :partial => 'seminar', :collection => @seminars %>
   </section>
