@@ -1,6 +1,6 @@
 <% content_for :body do -%>
   <section>
-    <%= raw @page.content_for(:body) %>
+    <%= raw @page.try(:content_for, :body) %>
   </section>
   <section>
     <%= render 'form' %>
