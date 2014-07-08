@@ -14,7 +14,7 @@ module Refinery
         @signup = Signup.new(params[:signup])
         @signup.seminar = @seminar
         if @signup.save_and_deliver_emails(request)
-          redirect_to refinery.thank_you_seminars_seminar_signups_url(@seminar)
+          redirect_to refinery.thank_you_seminars_seminar_signups_url(@seminar), :notice => "<p>Thank you for signing up for a complimentary seminar or workshop at UMassFive! We are committed to financial literacy so that you can make the best decisions with your money. We look forward to seeing you for <strong>#{@signup.seminar.name}: #{@signup.date.to_label}</strong>.</p>"
         else
           render :action => :new
         end

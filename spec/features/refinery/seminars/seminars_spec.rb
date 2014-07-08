@@ -41,6 +41,7 @@ describe Refinery do
           fill_in "Email", :with => "test@test.com"
           click_button "Submit"
           current_path.should eq(refinery.thank_you_seminars_seminar_signups_path(@seminar))
+          page.should have_content("Thank you for signing up for a complimentary seminar or workshop at UMassFive!")
         end
       end
 
