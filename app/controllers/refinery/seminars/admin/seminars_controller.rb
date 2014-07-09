@@ -11,7 +11,7 @@ module Refinery
 
         def new
           @seminar = Seminar.new
-          unless @seminar.dates.last.try(:new_record?)
+          if @seminar.dates.empty?
             3.times do
               @seminar.dates.build
             end
@@ -19,8 +19,8 @@ module Refinery
         end
 
         def edit
-          unless @seminar.dates.last.try(:new_record?)
-            3.times do
+          if @seminar.dates.last.try(:persisted?)
+            2.times do
               @seminar.dates.build
             end
           end
