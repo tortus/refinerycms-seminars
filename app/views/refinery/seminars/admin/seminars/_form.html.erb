@@ -16,12 +16,15 @@
         <%= date_fields.text_field :name, :placeholder => "Enter times and location", :size => 70 %>
         <%= date_fields.check_box :full %>
         <%= date_fields.label :full, :class => 'stripped' %>
-        <% if date_fields.object.persisted? && !date_fields.object.signups.any? %>
-          <%= link_to "Remove", refinery.seminars_admin_seminar_date_path(@seminar, date_fields.object),
+
+        <% if date_fields.object.persisted? -%>
+          <% if date_fields.object.signups.count == 0 -%>
+            <%= link_to "Remove", refinery.seminars_admin_seminar_date_path(@seminar, date_fields.object),
             {:method => :delete, :class => 'button confirm-delete', :style => "background-color: #ee1100;", :data => {:confirm => "Are you sure you want to remove this date?"}} %>
-        <% elsif date_fields.object.signups.any? %>
-          <%= pluralize(date_fields.object.signups.count, "Sign up") %>
-        <% end %>
+          <% else -%>
+            <%= pluralize(date_fields.object.signups.count, "Sign up") %>
+          <% end -%>
+        <% end -%>
       </div>
     <% end %>
   </div>
