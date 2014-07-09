@@ -1,3 +1,6 @@
+<% content_for :title, "#{@seminar.name} Sign Up" %>
+<% content_for :body_content_title, "#{@seminar.name} Sign Up" %>
+
 <% content_for :body do -%>
   <section>
     <%= raw @page.try(:content_for, :body) %>
