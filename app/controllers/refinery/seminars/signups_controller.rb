@@ -7,7 +7,7 @@ module Refinery
         @page = ::Refinery::Page.find_by_path("/seminars/sign-up")
         @signup = Signup.new(:date_id => params[:date_id].to_s)
         @signup.seminar = @seminar
-        present(@page)
+        present(@signup)
       end
 
       def create

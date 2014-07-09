@@ -66,6 +66,10 @@ module Refinery
         [first_name, middle_name, last_name].reject(&:blank?).map(&:strip).join(" ")
       end
 
+      def title
+        "#{seminar_name} Sign Up"
+      end
+
       private
 
         def seminar_must_be_active
