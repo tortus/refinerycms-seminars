@@ -7,7 +7,8 @@ module Refinery
 
       has_many :signups,  :order => 'refinery_seminars_signups.created_at ASC',
                           :class_name => 'Refinery::Seminars::Signup',
-                          :inverse_of => :date
+                          :inverse_of => :date,
+                          :dependent => :restrict
 
       attr_accessible :name, :date, :seminar_id, :seminar, :full, :position
 
