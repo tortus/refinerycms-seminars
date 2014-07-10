@@ -8,7 +8,9 @@ module Refinery
         crudify :'refinery/seminars/signup',
                 :title_attribute => 'name',
                 :xhr_paging => true,
-                :order => "created_at ASC"
+                :order => "created_at ASC",
+                :sortable => false,
+                :searchable => true
 
         private
 

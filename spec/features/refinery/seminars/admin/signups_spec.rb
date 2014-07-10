@@ -42,6 +42,25 @@ describe Refinery do
           end
         end
 
+        describe "searching for a signup" do
+          before do
+            @seminar = FactoryGirl.create(:seminar)
+            @date = FactoryGirl.create(:seminar_date, :seminar => @seminar)
+            @signup = FactoryGirl.create(:seminar_signup, :seminar => @seminar, :date => @date, :last_name => "Anderson")
+
+            visit refinery.seminars_admin_seminar_signups_path(@seminar)
+          end
+
+          it "succeeds when searching by last name" do
+            within ".search_form" do
+              fill_in "search", :with => "anderson"
+              click_button "Search"
+            end
+            page.should have_content(@signup.name)
+            page.should have_link("Cancel search")
+          end
+        end
+
       end
     end
   end
