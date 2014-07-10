@@ -6,8 +6,7 @@ module Refinery
         crudify :'refinery/seminars/seminar',
                 :title_attribute => 'name',
                 :xhr_paging => true,
-                :order => "position ASC",
-                :after_new => :build_date
+                :order => "position ASC"
 
         def new
           @seminar = Seminar.new

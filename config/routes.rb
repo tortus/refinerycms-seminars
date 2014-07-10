@@ -18,7 +18,7 @@ Refinery::Core::Engine.routes.draw do
         collection do
           post :update_positions
         end
-        # resources :signups, :only => [:index, :show]
+        resources :signups, :only => [:index, :show]
         resources :dates, :only => [:destroy]
       end
     end
