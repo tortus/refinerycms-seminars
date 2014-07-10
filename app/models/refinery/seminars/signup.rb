@@ -28,6 +28,8 @@ module Refinery
       validate :date_must_not_be_full
       validate :date_must_be_current
 
+      acts_as_indexed :fields => [:first_name, :last_name, :day_phone, :email, :guest_name]
+
       def save_and_deliver_emails(request)
         if result = self.save
           SignupMailer.confirmation(self, request).deliver
