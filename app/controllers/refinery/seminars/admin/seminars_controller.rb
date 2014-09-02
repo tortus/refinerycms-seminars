@@ -18,7 +18,7 @@ module Refinery
         end
 
         def edit
-          if @seminar.dates.last.try(:persisted?)
+          if @seminar.dates.last.try(:persisted?) || @seminar.dates.blank?
             2.times do
               @seminar.dates.build
             end
