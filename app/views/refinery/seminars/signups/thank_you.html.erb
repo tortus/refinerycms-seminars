@@ -1,6 +1,6 @@
 <% content_for :body do %>
   <%= raw flash[:notice] %>
-  <%= @page.try(:content_for, :body) %>
+  <%= raw @page.try(:content_for, :body) %>
 <% end %>
 
 <%= render '/refinery/content_page' %>
