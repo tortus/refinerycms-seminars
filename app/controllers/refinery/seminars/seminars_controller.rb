@@ -25,7 +25,7 @@ module Refinery
       end
 
       def find_seminar
-        @seminar = Seminar.find(params[:id])
+        @seminar = Seminar.active.find(params[:id])
       end
 
       def find_page
