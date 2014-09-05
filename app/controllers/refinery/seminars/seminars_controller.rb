@@ -3,6 +3,7 @@ module Refinery
     class SeminarsController < ::ApplicationController
 
       before_filter :find_all_seminars
+      before_filter :find_seminar, :only => [:show]
       before_filter :find_page
 
       def index
@@ -12,8 +13,6 @@ module Refinery
       end
 
       def show
-        @seminar = Seminar.find(params[:id])
-
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @seminar in the line below:
         present(@seminar)
@@ -23,6 +22,10 @@ module Refinery
 
       def find_all_seminars
         @seminars = Seminar.active.by_position.includes(:dates)
+      end
+
+      def find_seminar
+        @seminar = Seminar.find(params[:id])
       end
 
       def find_page
