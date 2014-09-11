@@ -1,15 +1,11 @@
 <ul>
     <li>
-      <%= form_tag(refinery.seminars_admin_seminar_signups_path(@seminar), :method => :get) do %>
-        <%= select_tag "date_id", options_from_collection_for_select(@seminar.dates, :id, :to_label), :include_blank => true %>
+      <%= form_tag(refinery.seminars_admin_seminar_signups_path(@seminar), :method => :get, :class => "search_form") do %>
+        <%= select_tag "date_id", options_from_collection_for_select(@seminar.dates, :id, :to_label), :include_blank => true, :style => "width: 300px;" %>
+        <%= text_field_tag "search", :size => 30, :title => "Put here a string of at least 3 characters containing what you are looking for.", :type => "search" %>
         <%= submit_tag "Search" %>
       <% end %>
     </li>
-  <% if ::Refinery::Seminars::Admin::SignupsController.searchable? %>
-    <li>
-      <%= render '/refinery/admin/search', :url => refinery.seminars_admin_seminar_signups_path(@seminar) %>
-    </li>
-  <% end %>
 <% if !searching? && ::Refinery::Seminars::Admin::SignupsController.sortable? && @seminar.signups.many? %>
   <li>
     <%= link_to t('.reorder', :what => "Seminars"),
