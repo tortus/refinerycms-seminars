@@ -2,7 +2,7 @@
   <span class='title'>
     <%= seminar.name %>
     <%= raw(%(<span class="label">Active</span>)) if seminar.active? %>
-    <%= link_to(refinery.seminars_admin_seminar_signups_path(seminar), "Signups") %>
+    &mdash; <%= link_to("View signups", refinery.seminars_admin_seminar_signups_path(seminar)) %>
   </span>
   <span class='actions'>
 
