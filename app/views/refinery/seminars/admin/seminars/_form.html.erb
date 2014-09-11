@@ -22,7 +22,7 @@
             <%= link_to "Remove", refinery.seminars_admin_seminar_date_path(@seminar, date_fields.object),
             {:method => :delete, :class => 'button confirm-delete', :style => "background-color: #ee1100;", :data => {:confirm => "Are you sure you want to remove this date?"}} %>
           <% else -%>
-            <%= link_to pluralize(date_fields.object.signups.count, "Sign up"), refinery.seminars_admin_seminar_signups_path(@seminar), :class => 'button' %>
+            <%= link_to pluralize(date_fields.object.signups.count, "Sign up"), refinery.seminars_admin_seminar_signups_path(@seminar, :date_id => date_fields.object.id), :class => 'button' %>
           <% end -%>
         <% end -%>
       </div>
