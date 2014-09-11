@@ -12,7 +12,7 @@ module Refinery
 
         prepend_before_filter :find_seminar
 
-        private
+        protected
 
           def find_seminar
             @seminar = Seminar.find(params[:seminar_id])
