@@ -9,6 +9,7 @@ module Refinery
              :from      => "\"#{Refinery::Core.site_name}\" <no-reply@#{request.domain}>",
              :reply_to  => "info@umassfive.coop") do |format|
           format.html
+          format.text
         end
       end
 
@@ -18,6 +19,7 @@ module Refinery
              :to      => "info@umassfive.coop",
              :from    => "\"#{Refinery::Core.site_name}\" <no-reply@#{request.domain}>") do |format|
           format.html
+          format.text
         end
       end
 
