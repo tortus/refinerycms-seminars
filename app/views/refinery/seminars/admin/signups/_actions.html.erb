@@ -4,8 +4,7 @@
         <%= select_tag "date_id", options_from_collection_for_select(@seminar.dates, :id, :to_label, params[:date_id].to_s), :include_blank => true, :style => "width: 290px;" %>
         <br/>
         <%= text_field_tag "search", params[:search].to_s, :size => 30, :title => "Put here a string of at least 3 characters containing what you are looking for.", :type => "search" %>
-        <br/>
-        <%= submit_tag "Search", :class => "button" %>
+        <%= submit_tag "Search", :class => "button", :style => "position: static;" %>
       <% end %>
     </li>
 <% if !searching? && ::Refinery::Seminars::Admin::SignupsController.sortable? && @seminar.signups.many? %>
