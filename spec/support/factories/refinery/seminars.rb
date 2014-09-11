@@ -16,7 +16,7 @@ FactoryGirl.define do
     prefix "MyString"
     first_name "Firstname"
     middle_name "Middlename"
-    last_name "Lastname"
+    sequence(:last_name) {|n| "Lastname #{n}"}
     suffix "MyString"
     address1 "MyString"
     address2 "MyString"
