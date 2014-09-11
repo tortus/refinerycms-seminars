@@ -1,9 +1,10 @@
 <ul>
     <li>
       <%= form_tag(refinery.seminars_admin_seminar_signups_path(@seminar), :method => :get, :class => "search_form") do %>
-        <%= select_tag "date_id", options_from_collection_for_select(@seminar.dates, :id, :to_label), :include_blank => true, :style => "width: 290px; clear: right;" %>
+        <%= select_tag "date_id", options_from_collection_for_select(@seminar.dates, :id, :to_label, params[:date_id].to_s), :include_blank => true, :style => "width: 290px;" %>
         <br/>
         <%= text_field_tag "search", params[:search].to_s, :size => 30, :title => "Put here a string of at least 3 characters containing what you are looking for.", :type => "search" %>
+        <br/>
         <%= submit_tag "Search", :class => "button" %>
       <% end %>
     </li>
