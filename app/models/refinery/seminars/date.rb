@@ -12,7 +12,7 @@ module Refinery
 
       attr_accessible :name, :date, :seminar_id, :seminar, :full, :position
 
-      validates :name, :presence => true
+      validates :name, :presence => true, :length => {:maximum => 255}
       validates :date, :presence => true
 
       def self.by_date
