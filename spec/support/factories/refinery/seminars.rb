@@ -6,6 +6,12 @@ FactoryGirl.define do
     trait :active do
       active true
     end
+
+    trait :with_active_date do
+      after(:create) do |seminar|
+        seminar.dates << FactoryGirl.create(:seminar_date, :active)
+      end
+    end
   end
 
   factory :seminar_date, :class => Refinery::Seminars::Date do

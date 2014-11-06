@@ -6,7 +6,7 @@ describe Refinery do
 
     describe "listing active seminars" do
       before do
-        @seminar = FactoryGirl.create(:seminar)
+        @seminar = FactoryGirl.create(:seminar, :with_active_date)
         visit refinery.seminars_seminars_path
       end
       it "shows the active seminars" do
@@ -16,7 +16,7 @@ describe Refinery do
 
     describe "viewing a seminar" do
       before do
-        @seminar = FactoryGirl.create(:seminar, :name => "MySeminar", :content => "TestContentHere")
+        @seminar = FactoryGirl.create(:seminar, :with_active_date, :name => "MySeminar", :content => "TestContentHere")
         visit refinery.seminars_seminar_path(@seminar)
       end
       it "shows the seminar" do
