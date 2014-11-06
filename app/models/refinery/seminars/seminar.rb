@@ -30,7 +30,7 @@ module Refinery
       end
 
       def self.active_with_future_dates
-        active.includes(:dates).merge(Date.current)
+        active.includes(:dates).merge(::Refinery::Seminars::Date.current)
       end
 
       def self.by_position
