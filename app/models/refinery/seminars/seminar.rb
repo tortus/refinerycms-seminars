@@ -29,6 +29,10 @@ module Refinery
         where(:active => true)
       end
 
+      def self.active_with_future_dates
+        active.includes(:dates).merge(Date.current)
+      end
+
       def self.by_position
         order("#{self.table_name}.position ASC")
       end

@@ -21,11 +21,11 @@ module Refinery
     protected
 
       def find_all_seminars
-        @seminars = Seminar.active.by_position.includes(:dates)
+        @seminars = Seminar.active_with_future_dates.by_position.includes(:dates)
       end
 
       def find_seminar
-        @seminar = Seminar.active.find(params[:id])
+        @seminar = Seminar.active_with_future_dates.find(params[:id])
       end
 
       def find_page
