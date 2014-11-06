@@ -3,7 +3,7 @@ require 'spec_helper'
 module Refinery
   module Seminars
     describe SignupMailer do
-      pending
+      skip
     end
   end
 end
