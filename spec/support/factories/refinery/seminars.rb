@@ -2,12 +2,25 @@ FactoryGirl.define do
   factory :seminar, :class => Refinery::Seminars::Seminar do
     sequence(:name) { |n| "Seminar#{n}" }
     active true
+
+    trait :active do
+      active true
+    end
   end
 
   factory :seminar_date, :class => Refinery::Seminars::Date do
     sequence(:name) { |n| "SeminarDate#{n}" }
     full false
     date { Date.today }
+
+    trait :active do
+      full false
+      date { Date.today }
+    end
+
+    trait :full do
+      full true
+    end
   end
 
   factory :seminar_signup, :class => Refinery::Seminars::Signup do
