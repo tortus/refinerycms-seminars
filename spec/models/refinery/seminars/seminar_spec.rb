@@ -27,10 +27,10 @@ module Refinery
           FactoryGirl.create(:seminar_date, :active, :seminar => seminar)
           Seminar.active_with_future_dates.should include(seminar)
         end
-        it "includes active seminars with full future dates" do
+        it "doesn't include seminars with full future dates" do
           seminar = FactoryGirl.create(:seminar, :active)
           FactoryGirl.create(:seminar_date, :seminar => seminar, :full => true, :date => ::Date.today + 1.day)
-          Seminar.active_with_future_dates.should include(seminar)
+          Seminar.active_with_future_dates.should_not include(seminar)
         end
         it "doesn't include active seminars without any future dates" do
           seminar = FactoryGirl.create(:seminar, :active)
