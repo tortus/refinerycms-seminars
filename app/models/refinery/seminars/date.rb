@@ -24,11 +24,11 @@ module Refinery
       end
 
       def self.current
-        where("#{self.table_name}.date >= ?", ::Date.today)
+        where("#{self.table_name}.date >= ?", Time.zone.today)
       end
 
       def current?
-        date && date >= ::Date.today
+        date && date >= Time.zone.today
       end
 
       def self.active
