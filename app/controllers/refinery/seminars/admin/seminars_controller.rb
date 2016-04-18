@@ -5,7 +5,7 @@ module Refinery
 
         crudify :'refinery/seminars/seminar',
                 :title_attribute => 'name',
-                :xhr_paging => true,
+                :paging => false,
                 :order => "position ASC"
 
         def new
